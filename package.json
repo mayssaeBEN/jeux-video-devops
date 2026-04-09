@@ -1,0 +1,30 @@
+{
+    "name": "webcalculator",
+    "description": "A calculator app in Node.js",
+    "version": 1,
+    "scripts": {
+        "mocha:test": "mocha tests",
+        "nyc:run": "nyc --check-coverage --branches 100 --lines 100 --statements 100 --functions 100 npm run mocha:test",
+        "nyc:coverage": "nyc report --reporter=lcov",
+        "cypress:run": "cypress run",
+        "cypress:test": "start-server-and-test app:serve http://localhost:3000 cypress:run",
+        "eslint:check": "eslint index.js modules/*",
+        "app:serve": "nodemon",
+        "jsdoc": "jsdoc modules/ -d docs"
+    },
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "devDependencies": {
+        "jsdoc": "^4.0.2",
+        "coveralls": "^3.1.1",
+        "cypress": "^12.13.0",
+        "eslint": "^8.42.0",
+        "eslint-config-google": "^0.14.0",
+        "jslint": "^0.12.1",
+        "mocha": "^10.2.0",
+        "nodemon": "^2.0.22",
+        "nyc": "^15.1.0",
+        "start-server-and-test": "^2.0.0"
+    }
+}
