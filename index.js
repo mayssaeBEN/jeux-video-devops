@@ -45,5 +45,7 @@ app.listen(PORT, () => {
   console.log(`Calculator app listening on port ${PORT}!`);
 });
 app.get('/pow', (req, res) => {
-  res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(parseFloat(req.query.a), parseFloat(req.query.b))}`);
+  const a = parseFloat(req.query.a);
+  const b = parseFloat(req.query.b);
+  res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(a, b)}`);
 });
