@@ -51,7 +51,7 @@ class Calculator {
    */
   power(a, b) {
     if (b < 0) {
-      return 1 / a * this.power(a, b + 1);
+      return 1 / (a * this.power(a, b + 1));
     } else if (b > 0) {
       return a * this.power(a, b - 1);
     } else {
