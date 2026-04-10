@@ -9,7 +9,9 @@
         "nyc:coverage": "nyc report --reporter=lcov",
         "cypress:run": "cypress run",
         "cypress:test": "start-server-and-test app:serve http://localhost:3000 cypress:run",
+        "lint": "eslint index.js modules/*",
         "eslint:check": "eslint index.js modules/*",
+        "audit": "npm audit",
         "app:serve": "nodemon",
         "jsdoc": "jsdoc modules/ -d docs"
     },
