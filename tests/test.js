@@ -55,4 +55,21 @@ describe('Calculator', () => {
             assert.equal(calc.divide(-5, 2), -2.5);
         })
     })
+    describe('Power', () => {
+      it('power 2^3 = 8', () => {
+        assert.equal(calc.power(2, 3), 8);
+      });
+      it('power 5^0 = 1', () => {
+        assert.equal(calc.power(5, 0), 1);
+      });
+      it('power 2^1 = 2', () => {
+        assert.equal(calc.power(2, 1), 2);
+      });
+      it('power 3^2 = 9', () => {
+        assert.equal(calc.power(3, 2), 9);
+      });
+      it('power 2^-1 = 0.5', () => {
+        assert.equal(calc.power(2, -1), 0.5);
+      });
+    })
 })

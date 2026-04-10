@@ -6,7 +6,7 @@ const app = express();
 const calc = new Calculator.Calculator();
 
 app.get('/', (req, res) => {
-  res.send('[CPT]');
+  res.send('Welcome to the calculator app!');
 });
 
 app.get('/add', (req, res) => {
@@ -43,9 +43,4 @@ app.get('/pow', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Calculator app listening on port ${PORT}!`);
-});
-app.get('/pow', (req, res) => {
-  const a = parseFloat(req.query.a);
-  const b = parseFloat(req.query.b);
-  res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(a, b)}`);
 });
