@@ -26,16 +26,19 @@ app.get('/mul', (req, res) => {
 
 app.get('/div', (req, res) => {
   const result = calc.divide(parseFloat(req.query.a), parseFloat(req.query.b));
-  if (result == Infinity) {
+  if (result === Infinity) {
     res.send(`Cannot divide ${req.query.a} by zero`);
+    return;
   }
-  res.send(`${req.query.a} / ${req.query.b} = \
-    ${calc.multiply(parseFloat(req.query.a), parseFloat(req.query.b))}`);
+  res.send(`${req.query.a} / ${req.query.b} = ` +
+    `${calc.divide(parseFloat(req.query.a), parseFloat(req.query.b))}`);
 });
 
-//NEW FEATURE
+// NEW FEATURE
 app.get('/pow', (req, res) => {
-  res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(parseFloat(req.query.a), parseFloat(req.query.b))}`);
+  const a = parseFloat(req.query.a);
+  const b = parseFloat(req.query.b);
+  res.send(`${req.query.a} ^ ${req.query.b} = ${calc.power(a, b)}`);
 });
 
 app.listen(PORT, () => {
